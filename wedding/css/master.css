@@ -3,8 +3,10 @@ html {
 	width: 100%;
 }
 
+
+
 body {
-	background: url('../images/body_bg.jpg') top center repeat-x #637c82;
+	background: url(http://th03.deviantart.net/fs12/PRE/i/2006/264/8/1/Wood_Texture_by_DayDreamsPhotography.jpg);
 	font-family: Georgia, serif;
 	font-size: 62.5%;
 	line-height: 150%;
@@ -42,7 +44,7 @@ h1 {
 
 /* -- NAVIGATION -- */
 nav {
-	background: url('../images/nav_bg.png') 50% 50% repeat-x transparent;
+	background: url('../images/nav_bg_pink.png') 50% 50% repeat-x transparent;
 	font-size: 1.4em;
 	line-height: 40px;
 	height: 38px;
@@ -55,14 +57,14 @@ nav {
 }
 
 nav .before {
-	background: url('../images/nav_before_bg.png') 0 0 no-repeat transparent;
+	background: url('../images/nav_before_bg_pink.png') 0 0 no-repeat transparent;
 	width: 66px;
 	left: -66px;
 	top: 1px;
 }
 
 nav .after {
-	background: url('../images/nav_after_bg.png') 0 0 no-repeat transparent;
+	background: url('../images/nav_after_bg_pink.png') 0 0 no-repeat transparent;
 	width: 61px;
 	right: -61px;
 	top: 1px;
@@ -393,6 +395,10 @@ nav a:hover {
 		line-height: 100%;
 		margin: 0 0 20px 0;
 		text-align: center;
+	}
+	
+	#of {
+		font-size: 50%;
 	}
 	
 	#wedding_party .time {
