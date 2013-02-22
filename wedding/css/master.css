@@ -170,12 +170,7 @@ nav a:hover {
 	-moz-transform: rotate(0.5deg);
 }
 
-.picture_holder img {
-	height: 100%;
-	width: 100%;
-}
-
-.woman .picture_holder {
+.picture_holder {
 	background: url('../images/woman_photo_container.png') 50% 50% no-repeat;
 	height: 389px;
 	width: 420px;
@@ -185,11 +180,16 @@ nav a:hover {
 	top: 21px;
 }
 
-.man .picture_holder {
-	background: url('../images/man_photo_container.png') 50% 50% no-repeat;
-	left: auto;
-	right: 0;
-}
+	.picture_holder img {
+		height: 100%;
+		width: 100%;
+	}
+
+	.man .picture_holder {
+		background: url('../images/man_photo_container.png') 50% 50% no-repeat;
+		left: auto;
+		right: 0;
+	}
 
 .picture {
 	position: absolute;
