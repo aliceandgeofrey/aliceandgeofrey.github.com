@@ -389,11 +389,10 @@ nav a:hover {
 	#wedding_party .date {
 		display: block;
 		color: #8a7a73;
-		font-size: 11em;
+		font-size: 8em;
 		line-height: 100%;
 		margin: 0 0 8px 0;
 		text-align: center;
-		text-transform: uppercase;
 	}
 	
 	#wedding_party .time {
