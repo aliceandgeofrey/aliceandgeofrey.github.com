@@ -1,0 +1,22 @@
+
+@font-face {
+    font-family: 'Folio Condensed Medium';
+    src: url('http://f.fontdeck.com/f/1/MDhiOExFbXUABW5SEVZ+t2DiUiqqjT8u8ac8Uvf1SNR+YTWGdtll/jMgT+CBb5LGqUI.eot');
+    src: url('http://f.fontdeck.com/f/1/MDhiOExFbXUABW5SEVZ+t2DiUiqqjT8u8ac8Uvf1SNR+YTWGdtll/jMgT+CBb5LGqUI.eot?') format('embedded-opentype'),
+    url('http://f.fontdeck.com/f/1/MDhiOExFbXUABW5SEVZ+t2DiUiqqjT8u8ac8Uvf1SNR+YTWGdtll/jMgT+CBb5LGqUI.woff') format('woff'),
+    url('http://f.fontdeck.com/f/1/MDhiOExFbXUABW5SEVZ+t2DiUiqqjT8u8ac8Uvf1SNR+YTWGdtll/jMgT+CBb5LGqUI.ttf') format('opentype'),
+    url('http://f.fontdeck.com/f/1/MDhiOExFbXUABW5SEVZ+t2DiUiqqjT8u8ac8Uvf1SNR+YTWGdtll/jMgT+CBb5LGqUI.svg#1060') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Folio Condensed Bold';
+    src: url('http://f.fontdeck.com/f/1/cGtXMFVHdWYABWcohjTmCycM2jZVV96+4qOkpOVqKmzhpIsGBFgxVRIXX7aFQ3jNQWg.eot');
+    src: url('http://f.fontdeck.com/f/1/cGtXMFVHdWYABWcohjTmCycM2jZVV96+4qOkpOVqKmzhpIsGBFgxVRIXX7aFQ3jNQWg.eot?') format('embedded-opentype'),
+    url('http://f.fontdeck.com/f/1/cGtXMFVHdWYABWcohjTmCycM2jZVV96+4qOkpOVqKmzhpIsGBFgxVRIXX7aFQ3jNQWg.woff') format('woff'),
+    url('http://f.fontdeck.com/f/1/cGtXMFVHdWYABWcohjTmCycM2jZVV96+4qOkpOVqKmzhpIsGBFgxVRIXX7aFQ3jNQWg.ttf') format('opentype'),
+    url('http://f.fontdeck.com/f/1/cGtXMFVHdWYABWcohjTmCycM2jZVV96+4qOkpOVqKmzhpIsGBFgxVRIXX7aFQ3jNQWg.svg#1052') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
