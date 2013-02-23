@@ -661,8 +661,7 @@ body .nextButton {
 		width: 362px;
 	}
 	
-body input#submit {
-	background: url('../images/submit_bg.png') center top no-repeat;
+#contact input[type="submit"] {
 	text-indent: -9999px;
 	margin: 0;
 	padding: 0;
@@ -670,13 +669,28 @@ body input#submit {
 	position: absolute;
 	left: auto;
 	top: auto;
-	right: 0;
-	bottom: 60px;
+	bottom: 50px;
 }
 
-body #submit:hover {
-	background-position: center bottom;
+#contact input#yes {
+	background: url('../images/submit_bg_yes.png') center top no-repeat;
 }
+
+#contact input#yes:hover {
+	background-position: center bottom;
+	cursor: pointer;
+}
+
+#contact input#no {
+	background: url('../images/submit_bg_no.png') center top no-repeat;
+	left: 20px;
+}
+
+#contact input#no:hover {
+	background-position: center bottom;
+	cursor: pointer;
+}
+
 
 #rockable {
 	background: url('../images/rockable.png') 0 0 no-repeat;
