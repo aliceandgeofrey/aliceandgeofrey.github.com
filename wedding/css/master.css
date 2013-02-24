@@ -674,6 +674,7 @@ body .nextButton {
 
 #contact input#yes {
 	background: url('../images/submit_bg_yes.png') center top no-repeat;
+	left: 10px;
 }
 
 #contact input#yes:hover {
@@ -683,7 +684,7 @@ body .nextButton {
 
 #contact input#no {
 	background: url('../images/submit_bg_no.png') center top no-repeat;
-	left: 20px;
+	left: 260px;
 }
 
 #contact input#no:hover {
