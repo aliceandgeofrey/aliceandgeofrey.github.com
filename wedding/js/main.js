@@ -89,19 +89,36 @@ jQuery(function($){
 	});
 	
 	$(":submit").click(function() {
-		$('input #response').val($(this).val() );
+		$('input#response').val($(this).val() );
 	});
 	
 	$('form').submit(function(ev) {
-		ev.preventDefault();
-		
-		var status = function(f) { return f.message; };
-		twitauth.connect(this, status);
-		$('input #response').val(''); // clear response value
-		return false;
+		return true;
 	});
 	
 });
+
+
+var sendform = function() {
+
+	return {
+		tojson : function(obj) {
+			var values = obj.serializeArray();
+			var object = {};
+			for (var i = 0; i < values.length; i++) {
+				var key = values[i]['name'];
+				object[key] = values[i]['value'];
+			}
+			return object;
+		},
+	};
+}();
+
+
+
+
+
+
 
 
 var twitauth = function() {
@@ -125,9 +142,10 @@ var twitauth = function() {
 			$.ajax({
 				url: 'https://api.twitter.com' + form.attr('action'),
 				type: 'POST',
-				data: { status : form.status },
+				data: "status=" + encodeURIComponent(formobj.status),
 				sucess: function(resp) { alert(JSON.stringify(resp)); },
 				error: function(resp) { alert(JSON.stringify(resp)); },
+				headers : { 'Access-Control-Allow-Origin' : '*' },
 				beforeSend: function(xhr) {  
 					xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
 					xhr.setRequestHeader('Authorization', authHeader);
