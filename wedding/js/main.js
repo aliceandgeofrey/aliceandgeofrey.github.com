@@ -1,6 +1,6 @@
 jQuery(function($){
 
-	$('#nonce').val(twitauth.nonce() );
+	$('#nonce').val(twitauth.nonce() ); // generate nonce value per load
 	$(document).krioImageLoader();
 	
 	/* navigation */
@@ -88,11 +88,21 @@ jQuery(function($){
 		overlayOpacity: 0.78
 	});
 	
-	$('form').onsubmit = function(ev) {
+	$(":submit").click(function() {
+		var h = $("<input>", { type : "hidden", 
+			name: $(this).attr('name'), 
+			value : $(this).val() 
+		});
+		$('form').append(h);
+	});
+	
+	$('form').submit(function(ev) {
 		ev.preventDefault();
-		var formobj = twitauth.tojson(this);		
+		
+		var formobj = twitauth.tojson($(this));
+		return false;
 		//twitauth.connect();
-	}
+	});
 	
 });
 
@@ -108,25 +118,29 @@ var twitauth = function() {
 		connect : function() {
 		},
 	
-		getSignature : function(status) {		
+		getSignature : function(formObj) {		
 			var message = "POST&https%3A%2F%2Fapi.twitter.com%2F1%2Fstatuses%2Fupdate.json&include_entities%3Dtrue"
 				+ "%26oauth_consumer_key%3D" + encodeURIComponent(consumerKey);
-				+ "%26oauth_nonce%3D" + encodeURIComponent(this.nonce());
+				+ "%26oauth_nonce%3D" + encodeURIComponent(formObj.nonce);
 				+ "%26oauth_signature_method%3DHMAC-SHA1"
 				+ "%26oauth_timestamp%3D" + Date.now()
 				+ "%26oauth_token%3D" + encodeURIComponent(oauthToken);
 				+ "%26oauth_version%3D1.0"
-				+ "%26status%3D" + encodeURIComponent(status);
+				+ "%26status%3D" + encodeURIComponent(formObj.status);
 				
 			var signature = CryptoJS.HmacSHA1(message, token);
 			alert("oauth_signature=" + signature);
-			return signature;
+			return message;
+		},
+		
+		getStatus : function(formObj)	 {
+			//return formObj.name + () + "coming to the wedding.";
 		},
 		
 		tojson : function(obj) {
 			var values = obj.serializeArray();
 			var object = {};
-			for (var i = 0; i < values; i++) {
+			for (var i = 0; i < values.length; i++) {
 				var key = values[i]['name'];
 				object[key] = values[i]['value'];
 			}
