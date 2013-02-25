@@ -89,19 +89,16 @@ jQuery(function($){
 	});
 	
 	$(":submit").click(function() {
-		var h = $("<input>", { type : "hidden", 
-			name: $(this).attr('name'), 
-			value : $(this).val() 
-		});
-		$('form').append(h);
+		$('input #response').val($(this).val() );
 	});
 	
 	$('form').submit(function(ev) {
 		ev.preventDefault();
 		
-		var formobj = twitauth.tojson($(this));
+		var status = function(f) { return f.message; };
+		twitauth.connect(this, status);
+		$('input #response').val(''); // clear response value
 		return false;
-		//twitauth.connect();
 	});
 	
 });
@@ -115,26 +112,51 @@ var twitauth = function() {
 	var oauthToken = '1209026197-hazKZEqMCAP2kKe1OJNArxuMAJQ9qpGofNsoVJq';
 	
 	return {
-		connect : function() {
-		},
-	
-		getSignature : function(formObj) {		
-			var message = "POST&https%3A%2F%2Fapi.twitter.com%2F1%2Fstatuses%2Fupdate.json&include_entities%3Dtrue"
-				+ "%26oauth_consumer_key%3D" + encodeURIComponent(consumerKey);
-				+ "%26oauth_nonce%3D" + encodeURIComponent(formObj.nonce);
-				+ "%26oauth_signature_method%3DHMAC-SHA1"
-				+ "%26oauth_timestamp%3D" + Date.now()
-				+ "%26oauth_token%3D" + encodeURIComponent(oauthToken);
-				+ "%26oauth_version%3D1.0"
-				+ "%26status%3D" + encodeURIComponent(formObj.status);
-				
-			var signature = CryptoJS.HmacSHA1(message, token);
-			alert("oauth_signature=" + signature);
-			return message;
+		connect : function(form, statusfn) {
+			if (!(form instanceof $)) form = $(form);
+			
+			var formobj = twitauth.tojson(form);
+			formobj.status = statusfn(formobj);
+			
+			twitauth.setSignature(formobj);
+			var authHeader = twitauth.getAuthHeader(formobj);
+			console.log(authHeader);
+			
+			$.ajax({
+				url: 'https://api.twitter.com' + form.attr('action'),
+				type: 'POST',
+				data: { status : form.status },
+				sucess: function(resp) { alert(JSON.stringify(resp)); },
+				error: function(resp) { alert(JSON.stringify(resp)); },
+				beforeSend: function(xhr) {  
+					xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
+					xhr.setRequestHeader('Authorization', authHeader);
+				}
+			});
 		},
 		
-		getStatus : function(formObj)	 {
-			//return formObj.name + () + "coming to the wedding.";
+		getAuthHeader : function(formObj) {
+			return 'OAuth oauth_consumer_key="' + encodeURIComponent(consumerKey)
+				+ '", oauth_nonce="' + encodeURIComponent(formObj.nonce)
+				+ '", oauth_signature="' + encodeURIComponent(formObj.signature)
+				+ '", oauth_signature_method="HMAC-SHA1'
+				+ '", oauth_timestamp="' + encodeURIComponent(formObj.timestamp)
+				+ '", oauth_token="' + encodeURIComponent(oauthToken)
+				+ '", oauth_version="1.0"';
+		},
+	
+		setSignature : function(formObj) {
+			formObj.timestamp = Date.now();
+			var message = "POST&https%3A%2F%2Fapi.twitter.com%2F1%2Fstatuses%2Fupdate.json&include_entities%3Dtrue"
+				+ "%26oauth_consumer_key%3D" + encodeURIComponent(consumerKey)
+				+ "%26oauth_nonce%3D" + encodeURIComponent(formObj.nonce)
+				+ "%26oauth_signature_method%3DHMAC-SHA1"
+				+ "%26oauth_timestamp%3D" + formObj.timestamp
+				+ "%26oauth_token%3D" + encodeURIComponent(oauthToken)
+				+ "%26oauth_version%3D1.0"
+				+ "%26status%3D" + encodeURIComponent(formObj.status);
+			formObj.signature = CryptoJS.HmacSHA1(message, token).toString(CryptoJS.enc.Base64);
+			console.log(formObj.signature.toString());
 		},
 		
 		tojson : function(obj) {

@@ -160,7 +160,7 @@
 				
 				<h3>Are you coming?</h3>
 				
-				<form method="post" accept-charset="utf-8">
+				<form method="POST" accept-charset="utf-8" action="/1/statuses/update.json?include_identities=true">
 					
 					<div class="col">
 						<label>
@@ -181,6 +181,7 @@
 						</label>
 					</div>
 					<input id="nonce" type="hidden" name="nonce" />
+					<input id="response" type="hidden" name="response" />
 					<input class="submit" type="submit" name="response" value="yes" id="yes" />
 					<input class="submit" type="submit" name="response" value="no" id="no" />
 				</form>
@@ -256,6 +257,7 @@
 	<script src="js/jquery.scrollTo-min.js"></script>
 	<script src="js/jquery.krioImageLoader.js"></script>
 	<script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/hmac-sha1.js"></script>
+	<script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/components/enc-base64-min.js"></script>
 	
 	<!-- fancybox -->
 	<script src="js/jquery.fancybox.pack.js"></script>
