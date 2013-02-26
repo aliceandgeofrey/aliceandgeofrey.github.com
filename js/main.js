@@ -94,9 +94,11 @@ var formutil = function() {
 	var show = {
 		t : function(aClass, rClass) {
 			return function(newmsg) {
-			var msg = $('span#message');
-			msg.removeClass(rClass).addClass(aClass);
-			msg.text(newmsg); }
+				var msg = $('span#message');
+				msg.removeClass(rClass).addClass(aClass);
+				msg.text(newmsg);
+				
+			}
 		}
 	};
 	show.error = show.t('error', 'success');
@@ -105,7 +107,7 @@ var formutil = function() {
 	return {
 		validateForm : function() {
 			var obj = formutil.tojson($('form'));
-			var v = obj['entry.1291690228']; // name field
+			var v = obj['entry.531332408']; // name field
 			if (v === undefined || v.trim() === "") {
 				show.error('please fill in your name');
 			} else {
