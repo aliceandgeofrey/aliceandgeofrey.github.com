@@ -378,23 +378,23 @@ nav a:hover {
 
 /* -- WEDDING PARTY -- */
 #wedding_party {
-	background: url('../images/weddingparty_bg.jpg') center top repeat-x;
+	background: url('../images/weddingparty_bg.png') center top repeat-x;
 	border-bottom: 1px solid #a5a5a6;
 	padding-top: 105px;
-	height: 306px;
+	height: 420px;
 	text-align: center;
 	position: relative;
 }
 
 	#wedding_party .before {
-		background: url('../images/weddingparty_bg.jpg') right top repeat-x;
+		background: url('../images/weddingparty_bg.png') right top repeat-x;
 		border-bottom: 1px solid #a5a5a6;
 		width: 59px;
 		left: -59px;
 	}
 
 	#wedding_party .after {
-		background: url('../images/weddingparty_bg.jpg') -24px top repeat-x;
+		background: url('../images/weddingparty_bg.png') -24px top repeat-x;
 		border-bottom: 1px solid #a5a5a6;
 		width: 53px;
 		right: -53px;
@@ -428,16 +428,16 @@ nav a:hover {
 		color: #655a5a;
 		font-size: 2.8em;
 		line-height: 100%;
-		margin: 0 0 20px 0;
+		margin: 0 0 10px 0;
 		text-align: center;
 	}
 	
 	#wedding_party .location {
 		background: url('../images/place_pin.png') 0 2px no-repeat transparent;
 		color: #809498;
-		font-size: 1.5em;
+		font-size: 1.8em;
 		line-height: 270%;
-		margin: 0 auto;
+		margin: 15px auto auto auto;
 		text-align: center;
 		text-transform: uppercase;
 		padding-left: 30px;
@@ -448,7 +448,7 @@ nav a:hover {
 	
 	#wedding_party .room {
 		color: #809498;
-		font-size: 1.6em;
+		font-size: 1.4em;
 		line-height: 270%;
 		margin: 0 auto;
 		text-align: center;
