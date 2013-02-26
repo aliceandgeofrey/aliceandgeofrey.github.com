@@ -380,7 +380,7 @@ nav a:hover {
 #wedding_party {
 	background: url('../images/weddingparty_bg.jpg') center top repeat-x;
 	border-bottom: 1px solid #a5a5a6;
-	padding-top: 110px;
+	padding-top: 105px;
 	height: 306px;
 	text-align: center;
 	position: relative;
@@ -413,7 +413,7 @@ nav a:hover {
 	#wedding_party .date {
 		display: block;
 		color: #8a7a73;
-		font-size: 8em;
+		font-size: 7em;
 		line-height: 100%;
 		margin: 0 0 20px 0;
 		text-align: center;
@@ -428,7 +428,7 @@ nav a:hover {
 		color: #655a5a;
 		font-size: 2.8em;
 		line-height: 100%;
-		margin: 0 0 8px 0;
+		margin: 0 0 20px 0;
 		text-align: center;
 	}
 	
@@ -444,6 +444,17 @@ nav a:hover {
 		display: inline-block;
 		zoom: 1;
 		*display: inline;
+	}
+	
+	#wedding_party .room {
+		color: #809498;
+		font-size: 1.6em;
+		line-height: 270%;
+		margin: 0 auto;
+		text-align: center;
+		text-transform: uppercase;
+		display: inline-block;
+		zoom: 1;
 	}
 	
 	#wedding_party #map_canvas {
