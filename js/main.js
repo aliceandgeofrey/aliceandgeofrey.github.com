@@ -17,7 +17,8 @@ jQuery(function($){
 		overlayColor: '#68787b',
 		overlayOpacity: 0.78,
 		titlePosition: 'inside',
-		padding: 27
+		padding: 27,
+		scrolling: 'no'
 	});
 	
 	/* photos hover */
@@ -25,6 +26,10 @@ jQuery(function($){
 		function() { $('.prevButton, .nextButton').fadeIn(150); },
 		function() { $('.prevButton, .nextButton').fadeOut(150); }
 	);
+	
+	$('#popupmap').click(function() {
+		$('#map_canvas_container').removeClass('hide');
+	});
 	
 	/* photos rotation */
 	var degrees = [-1.7, 0.2, 3.2, -1.2];
@@ -86,6 +91,37 @@ jQuery(function($){
 	});
 	
 	$('form').submit(function() { return true; });
+	
+	var initmap = function() {
+				var centerNL = new google.maps.LatLng(43.65111,-79.49348);
+		var myOptions = {
+		  zoom: 15,
+		  center: centerNL,
+		  mapTypeId: google.maps.MapTypeId.ROADMAP,
+		  mapTypeControl: false,
+		  navigationControl: true,
+		  navigationControlOptions: {
+			style: google.maps.NavigationControlStyle.ZOOM_PAN,
+			position: google.maps.ControlPosition.TOP_LEFT
+		  }
+		};
+
+		var map = new google.maps.Map(document.getElementById('map_canvas'), myOptions);
+
+		var infowindow = new google.maps.InfoWindow({
+			content: "Old Mill Inn Toronto"
+		});
+
+		var marker = new google.maps.Marker({
+			position: centerNL, map: map, title: "Old Mill Inn, Toronto"
+		});
+
+		google.maps.event.addListener(marker, 'click', function() {
+		  infowindow.open(map,marker);
+		});
+	};
+	
+	initmap();
 	
 });
 

@@ -127,7 +127,12 @@
 				</div>
 				
 				<div class="location">Old Mill Inn, Toronto
-					<a id="popupmap" class="fancybox fancybox-media" title="Old Mill Inn, Toronto" href="//maps.google.com/maps?q=old%20mill%20inn%20toronto">get directions</a>
+					<a id="popupmap" class="fancybox fancybox-media" title="Old Mill Inn, Toronto" href="#map_canvas_container">get directions</a>
+				</div>
+				
+				<div class="hide" id="map_canvas_container">
+					<a href="http://goo.gl/maps/HTsbE" target="_blank" style="align:center;">View Larger Map</a>
+					<div id="map_canvas" style="width:640px;height:480px;"></div>
 				</div>
 			
 				<div class="ornament_bottom"></div>
@@ -253,6 +258,7 @@
 	<!-- END about section -->
 	
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
 	<script src="js/jquery.customslider.js"></script>
 	<script src="js/jquery.scrollTo-min.js"></script>
 	<script src="js/jquery.krioImageLoader.js"></script>
@@ -264,6 +270,5 @@
 	<link rel="stylesheet" href="css/jquery.fancybox.css" type="text/css" media="screen" />
 	
 	<script src="js/main.js"></script>
-	
 </body>
 </html>

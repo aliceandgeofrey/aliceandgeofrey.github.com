@@ -36,6 +36,11 @@ h1 {
 	top: 0;
 	height: 100%;
 }
+.hide {
+	position: absolute;
+	top: -9999px;
+	left: -9999px;
+}
 
 #main {
 	overflow: hidden;
@@ -426,6 +431,11 @@ nav a:hover {
 		display: inline-block;
 		zoom: 1;
 		*display: inline;
+	}
+	
+	#wedding_party #map_canvas {
+		width: 640px;
+		height: 480px;
 	}
 	
 		#wedding_party .location a {
