@@ -133,7 +133,7 @@ var formutil = function() {
 				var msg = $('span#message');
 				msg.removeClass(rClass).addClass(aClass);
 				msg.text(newmsg);
-				
+				return msg;
 			}
 		}
 	};
@@ -144,10 +144,14 @@ var formutil = function() {
 		validateForm : function() {
 			var obj = formutil.tojson($('form'));
 			var v = obj['entry.531332408']; // name field
+			
 			if (v === undefined || v.trim() === "") {
 				show.error('please fill in your name');
 			} else {
-				show.success('thank you for responding!');
+				show.success('thank you for responding!').delay(3000).queue(function() {
+				$('form input').val('');
+				$('span#message').text('').dequeue();
+			});
 			}
 		},
 		
