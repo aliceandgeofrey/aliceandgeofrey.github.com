@@ -147,7 +147,9 @@ var formutil = function() {
 			
 			if (v === undefined || v.trim() === "") {
 				show.error('please fill in your name');
+				$('form').submit(function() { return false; });
 			} else {
+				$('form').submit(function() { return true; });
 				show.success('thank you for responding!').delay(3000).queue(function() {
 				$('form input').val('');
 				$('span#message').text('').dequeue();
