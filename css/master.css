@@ -3,6 +3,19 @@ html {
 	width: 100%;
 }
 
+::-webkit-input-placeholder { /* WebKit browsers */
+    color:    rgb(210, 210, 210);
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    rgb(210, 210, 210);
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    rgb(210, 210, 210);
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color:    rgb(210, 210, 210);
+}
+
 iframe {
 	position: absolute;
 	top: -9999px;
@@ -422,7 +435,7 @@ nav a:hover {
 	#wedding_party .location {
 		background: url('../images/place_pin.png') 0 2px no-repeat transparent;
 		color: #809498;
-		font-size: 1.1em;
+		font-size: 1.5em;
 		line-height: 270%;
 		margin: 0 auto;
 		text-align: center;
