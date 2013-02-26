@@ -3,7 +3,11 @@ html {
 	width: 100%;
 }
 
-
+iframe {
+	position: absolute;
+	top: -9999px;
+	left: -9999px;
+}
 
 body {
 	background: url('../images/body_bg_light.jpg');
@@ -219,9 +223,9 @@ nav a:hover {
 		left: 0;
 		
 		/* Fallback for web browsers that don't support RGBa */
-		background-color: rgb(73, 101, 109);
+		background-color: rgb(255, 153, 204);
 		/* RGBa with 0.6 opacity */
-		background-color: rgba(73, 101, 109, 0.75);
+		background-color: rgba(255, 153, 204, 0.4);
 		/* For IE 5.5 - 7*/
 		filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7049656d, endColorstr=#7049656d);
 		/* For IE 8*/
@@ -262,7 +266,7 @@ nav a:hover {
 	background: url('../images/getting_married.png') 0 0 no-repeat;
 	text-indent: -9999px;
 	margin-left: -86px;
-	height: 39px;
+	height: 50px;
 	width: 173px;
 	z-index: 5;
 }
@@ -560,7 +564,7 @@ body .nextButton {
 #contact {
 	background: url('../images/contact_bg.png') 0 0 no-repeat;
 	height: 357px;
-	padding: 50px 0 0 0;
+	padding: 45px 0 0 0;
 	position: relative;
 }
 
@@ -578,11 +582,19 @@ body .nextButton {
 	
 	#contact h3 {
 		color: #575c5c;
-		font-family: 'Love Ya Like A Sister', cursive;
+		font-family: 'Lobster', Impact, Arial bold, sans-serif;
 		font-size: 6em;
 		line-height: 100%;
-		margin-bottom: 22px;
 		text-indent: 16px;
+	}
+	
+	#contact p {
+		color: #575c5c;
+		font-size: 2em;
+		line-height: 100%;
+		position: absolute;
+		left: 500px;
+		bottom: 72px;
 	}
 	
 	#contact label {
@@ -602,6 +614,19 @@ body .nextButton {
 		z-index: 2;
 	}
 	
+		#contact .success {
+			color: #5c9188;
+		}
+		
+		#contact .error {
+			color: #bc4a5b;
+		}
+	
+		#contact #message {
+			left: 0px;
+			font-size: 40%;
+		}
+	
 	#contact input {
 		background: url('../images/input_bg.png') 0 0 no-repeat transparent;
 		border: 0;
@@ -609,7 +634,7 @@ body .nextButton {
 		display: block;
 		font-family: 'Georgia';
 		font-size: 1.4em;
-		height: 72px;
+		height: 70px;
 		padding: 1px 0 0 70px;
 		width: 292px;
 		outline: 0;
@@ -692,20 +717,6 @@ body .nextButton {
 	cursor: pointer;
 }
 
-
-#rockable {
-	background: url('../images/rockable.png') 0 0 no-repeat;
-	display: block;
-	height: 14px;
-	text-indent: -9999px;
-	overflow: hidden;
-	width: 16px;
-	position: absolute;
-	bottom: 23px;
-	right: -35px;
-	z-index: 2;
-}
-
 /* -- FOOTER -- */
 footer {
 	background: url('../images/footer_bg.png') center bottom repeat-x;
@@ -717,15 +728,17 @@ footer {
 }
 
 	footer .before {
-		background: url('../images/footer_bg.png') right bottom repeat-x;
+		background: url('../images/nav_before_bg_pink.png') right bottom repeat-x;
 		width: 60px;
 		left: -60px;
+		top: 0px;
 	}
 
 	footer .after {
-		background: url('../images/footer_bg.png') left bottom repeat-x;
+		background: url('../images/nav_after_bg_pink.png') left bottom repeat-x;
 		width: 60px;
 		right: -60px;
+		top: 0px;
 	}
 	
 /* -- FANCYBOX -- */

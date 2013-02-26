@@ -158,40 +158,34 @@
 			<div id="contact">
 				<div class="before"></div>
 				
-				<h3>Are you coming?</h3>
+				<h3>Are you coming?<span id="message" class="error"></span></h3>
 				
-				<form method="POST" accept-charset="utf-8" action="https://docs.google.com/forms/d/1kzMcuch1jVsBwsbeo2Bsr2THZnjFvNadYHmHgyElH-A/formResponse">
+				<form method="POST" target="rsvp_hidden" accept-charset="utf-8" action="https://docs.google.com/forms/d/1kzMcuch1jVsBwsbeo2Bsr2THZnjFvNadYHmHgyElH-A/formResponse">
 					
 					<div class="col">
 						<label>
 							<span>Name</span>
-							<input type="text" name="entry.1291690228" value="">
+							<input class="field" type="text" name="entry.1291690228" value="">
 						</label>
 						<label class="mail">
-							<span>eMail</span>
-							<input type="text" name="entry.1868775513" value="">
+							<span>e.Mail</span>
+							<input class="field" type="text" name="entry.1868775513" value="">
 						</label>
 					</div>
 				
 					<div class="col">
 						<label class="message">
 							<span>Message</span>
-							<textarea rows="4" name="entry.207740400"></textarea>
+							<textarea class="field" rows="4" placeholder="Please RSVP separately for each guest from your invitation" name="entry.207740400"></textarea>
 						</label>
 					</div>
 					
+					<input id="response" type="hidden" name="entry.1076945890" />
 					<input class="submit" type="submit" name="response" value="yes" id="yes" />
 					<input class="submit" type="submit" name="response" value="no" id="no" />
 				</form>
 				
-				<iframe name="rsvp_hidden" style="display:none;">
-					<form method="POST" accept-charset="utf-8" action="https://docs.google.com/forms/d/1kzMcuch1jVsBwsbeo2Bsr2THZnjFvNadYHmHgyElH-A/formResponse">
-						<input id="hname" type="hidden" name="entry.1291690228" value="none">
-						<input id="hmail" type="hidden" name="entry.1868775513" value="none">
-						<input id="hmessage" type="hidden" name="entry.207740400" value="none" >
-						<input id="hresponse" type="hidden" name="entry.1076945890" />
-					</form>
-				</iframe>
+				<iframe src="about:blank" name="rsvp_hidden"></iframe>
 				
 			
 				<div class="after"></div>
@@ -262,8 +256,6 @@
 	<script src="js/jquery.customslider.js"></script>
 	<script src="js/jquery.scrollTo-min.js"></script>
 	<script src="js/jquery.krioImageLoader.js"></script>
-	<script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/hmac-sha1.js"></script>
-	<script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/components/enc-base64-min.js"></script>
 	
 	<!-- fancybox -->
 	<script src="js/jquery.fancybox.pack.js"></script>
