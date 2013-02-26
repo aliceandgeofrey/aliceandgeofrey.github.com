@@ -93,7 +93,7 @@ jQuery(function($){
 	$('form').submit(function() { return true; });
 	
 	var initmap = function() {
-				var centerNL = new google.maps.LatLng(43.65111,-79.49348);
+		var centerNL = new google.maps.LatLng(43.65111,-79.49348);
 		var myOptions = {
 		  zoom: 15,
 		  center: centerNL,
@@ -107,15 +107,15 @@ jQuery(function($){
 		};
 
 		var map = new google.maps.Map(document.getElementById('map_canvas'), myOptions);
-
-		var infowindow = new google.maps.InfoWindow({
-			content: "Old Mill Inn Toronto"
-		});
+		
+		var contenthtml = '<div><h3>Old Mill Inn</h3><p>21 Old Mill Road, Toronto, Ontario</p><a href="http://www.oldmilltoronto.com/" target="_blank" >Website</a> |  <a href="http://goo.gl/maps/HTsbE" target="_blank">View Larger Map</a></div>';
+		var infowindow = new google.maps.InfoWindow({ content: contenthtml });
 
 		var marker = new google.maps.Marker({
 			position: centerNL, map: map, title: "Old Mill Inn, Toronto"
 		});
-
+		
+		infowindow.open(map,marker);
 		google.maps.event.addListener(marker, 'click', function() {
 		  infowindow.open(map,marker);
 		});
