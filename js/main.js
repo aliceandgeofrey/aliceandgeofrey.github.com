@@ -109,7 +109,7 @@ $(window).load(function() {
 
 	var map = new google.maps.Map(document.getElementById('map_canvas'), myOptions);
 	
-	var contenthtml = '<div><h3>Old Mill Inn</h3><p>21 Old Mill Road, Toronto, Ontario</p><a href="http://www.oldmilltoronto.com/" target="_blank" >Website</a> |  <a ref="http://goo.gl/maps/HTsbE" target="_blank">View Larger Map</a></div>';
+	var contenthtml = '<div><h3>Old Mill Inn</h3><p>21 Old Mill Road, Toronto, Ontario</p><a href="http://www.oldmilltoronto.com/" target="_blank" >Website</a> |  <a href="http://goo.gl/maps/HTsbE" target="_blank">View Larger Map</a></div>';
 	var infowindow = new google.maps.InfoWindow({ content: contenthtml });
 	var marker = new google.maps.Marker({
 		position: centerNL, map: map, title: "Old Mill Inn, Toronto"
