@@ -423,17 +423,27 @@ nav a:hover {
 		font-size: 50%;
 	}
 	
+	#wedding_party #room_time_container {
+		position: relative;
+		padding-bottom: 10px;
+	}
+	
+	#wedding_party .roomtime {
+		display : inline-block;
+		padding: 0px 18px 0px 18px;
+	}
+	
 	#wedding_party .time {
 		display: block;
 		color: #655a5a;
-		font-size: 2.8em;
+		font-size: 2.6em;
 		line-height: 100%;
 		margin: 0 0 10px 0;
 		text-align: center;
 	}
 	
 	#wedding_party .location {
-		background: url('../images/place_pin.png') 0 2px no-repeat transparent;
+		background: url('../images/place_pin.png') 0 12px no-repeat transparent;
 		color: #809498;
 		font-size: 1.8em;
 		line-height: 270%;
