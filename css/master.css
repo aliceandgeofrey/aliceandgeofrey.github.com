@@ -275,6 +275,7 @@ nav a:hover {
 	margin-left: -47px;
 	height: 74px;
 	width: 94px;
+	z-index: 3;
 }
 
 .getting_married {
@@ -407,6 +408,7 @@ nav a:hover {
 		width: 100%;
 		position: absolute;
 		top: -66px;
+		z-index: 3;
 		left: 0;
 	}
 	
