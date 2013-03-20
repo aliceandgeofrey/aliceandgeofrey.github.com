@@ -4,16 +4,16 @@ html {
 }
 
 ::-webkit-input-placeholder { /* WebKit browsers */
-    color:    rgb(210, 210, 210);
+    color:    rgb(220, 220, 220);
 }
 :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-    color:    rgb(210, 210, 210);
+    color:    rgb(220, 220, 220);
 }
 ::-moz-placeholder { /* Mozilla Firefox 19+ */
-    color:    rgb(210, 210, 210);
+    color:    rgb(220, 220, 220);
 }
 :-ms-input-placeholder { /* Internet Explorer 10+ */
-    color:    rgb(210, 210, 210);
+    color:    rgb(220, 220, 220);
 }
 
 iframe {
@@ -509,6 +509,17 @@ nav a:hover {
 	padding-top: 48px;
 	position: relative;
 }
+
+	#photos p {
+		display: block;
+		color: #a0a0a0;
+		font-size: 5em;
+		line-height: 100%;
+		margin: 60px 0 20px 0;
+		text-align: center;
+		font-family: 'Lobster', Impact, Arial bold, sans-serif;
+	}
+
 	#photos ul {
 		position: relative;
 		z-index: 2;
@@ -635,12 +646,11 @@ body .nextButton {
 	}
 	
 	#contact p {
-		color: #575c5c;
-		font-size: 2em;
+		color: #809498;
+		font-size: 1.4em;
+		font-style: italic;
 		line-height: 100%;
-		position: absolute;
-		left: 500px;
-		bottom: 72px;
+		margin: 0px 0px 0px 20px;
 	}
 	
 	#contact label {

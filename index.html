@@ -163,14 +163,14 @@
 			<!-- Photos -->
 			<div id="photos">
 				<div class="before"></div>
-			
-				<div id="slider">
+				<p>Pictures Coming Soon!</p>
+				<div id="slider" class="hide">
 					<ul>
 						<li><a class="fancybox" title="Image caption goes here" href="images/black.jpg"><img alt="image1" src="images/image1.jpg"></a></li>
-						<li><a class="fancybox" href="images/black.jpg"><img alt="image2" src="images/image1.jpg"></a></li>
-						<li><a class="fancybox" href="images/black.jpg"><img alt="image3" src="images/image1.jpg"></a></li>
-						<li><a class="fancybox" href="images/black.jpg"><img alt="image3" src="images/image1.jpg"></a></li>
-						<li class="last"><a class="fancybox" href="images/black.jpg"><img alt="image4" src="images/image1.jpg"></a></li>
+						<li><a class="fancybox" title="Image caption goes here" href="images/black.jpg"><img alt="image1" src="images/image1.jpg"></a></li>
+						<li><a class="fancybox" title="Image caption goes here" href="images/black.jpg"><img alt="image1" src="images/image1.jpg"></a></li>
+						<li><a class="fancybox" title="Image caption goes here" href="images/black.jpg"><img alt="image1" src="images/image1.jpg"></a></li>
+						<li><a class="fancybox" title="Image caption goes here" href="images/black.jpg"><img alt="image1" src="images/image1.jpg"></a></li>
 					</ul>
 				</div>
 			
@@ -183,7 +183,7 @@
 				<div class="before"></div>
 				
 				<h3>Are you coming?<span id="message" class="error"></span></h3>
-				
+				<p>Please RSVP by July 26!</p>
 				<form method="POST" target="rsvp_hidden" accept-charset="utf-8" action="https://docs.google.com/forms/d/13oSkmk4yPAMJ0kBTFaAoBGCKOMwlQeFCt1Vh2-Eio7A/formResponse">
 					
 					<div class="col">
@@ -200,7 +200,7 @@
 					<div class="col">
 						<label class="message">
 							<span>Message</span>
-							<textarea class="field" rows="4" placeholder="Please RSVP separately for each guest from your invitation." name="entry.140069097"></textarea>
+							<textarea class="field" rows="4" placeholder="Please RSVP separately for each guest from your invitation." onfocus="this.placeholder = ''" onblur="this.placeholder = 'Please RSVP separately for each guest from your invitation.'" name="entry.140069097"></textarea>
 						</label>
 					</div>
 					
